@@ -86,6 +86,13 @@ class CreditCheck
       p "The number #{credit_card_number} is invalid!"
     end
   end
+
+  def is_valid_express?
+    checked_number = luhn_algorithm_express(@card_number)
+
+    return true if checked_number == "The number #{@card_number} is valid!"
+    return false if checked_number == "The number #{@card_number} is invalid!"
+  end
 end
 
 
