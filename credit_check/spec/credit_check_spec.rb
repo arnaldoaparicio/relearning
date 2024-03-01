@@ -20,4 +20,10 @@ RSpec.describe CreditCheck do
 
     expect(credit_check.last_four).to eq('5240')
   end
+
+  it 'checks to see if card number is valid' do
+    credit_check = CreditCheck.new("5541808923795240",15000)
+
+    expect(credit_check.is_valid?).to eq(false)
+  end
 end
