@@ -1,7 +1,13 @@
-card_number = "6011797668868728"
+# card_number = "6011797668868728"
 
 # Your Luhn Algorithm Here
 
+class CreditCheck
+  attr_reader :card_number, :credit_limit
+  def initialize(card_number, credit_limit)
+    @card_number = card_number
+    @credit_limit = credit_limit
+  end
   def luhn_algorithm(credit_card_number)
     element = 0
     credit_array = credit_card_number.split('')
@@ -34,9 +40,10 @@ card_number = "6011797668868728"
       p "The number #{credit_card_number} is invalid!"
     end
   end
+end
 
 
-  luhn_algorithm(card_number)
+  # luhn_algorithm(card_number)
 # Output
 ## If it is valid, print "The number [card number] is valid!"
 ## If it is invalid, print "The number [card number] is invalid!"
