@@ -14,4 +14,10 @@ RSpec.describe CreditCheck do
     expect(credit_check.card_number).to eq("5541808923795240")
     expect(credit_check.limit).to eq(15000)
   end
+
+  it 'returns last four digits of card number' do
+    credit_check = CreditCheck.new("5541808923795240",15000)
+
+    expect(credit_check.last_four).to eq('5240')
+  end
 end
