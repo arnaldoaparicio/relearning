@@ -53,6 +53,39 @@ class CreditCheck
       p "The number #{credit_card_number} is invalid!"
     end
   end
+
+  def luhn_algorithm_express(american_express_number)
+    element = 0
+    credit_array = american_express_number.split('')
+    new_card_number = []
+    greater_than_9_card_number = []
+
+    credit_array.each do |number|
+      if element.odd?
+        new_number = number.to_i * 2
+        new_card_number << new_number
+      else
+        new_card_number << number.to_i
+      end
+      element += 1
+    end
+
+    new_card_number.each do |card_number|
+      if card_number > 9
+        double_number = card_number.to_s.split('').map(&:to_i).sum
+        greater_than_9_card_number << double_number
+      else
+        greater_than_9_card_number << card_number
+      end
+    end
+
+    validity = greater_than_9_card_number.sum
+    if validity % 10 == 0
+      p "The number #{credit_card_number} is valid!"
+    else
+      p "The number #{credit_card_number} is invalid!"
+    end
+  end
 end
 
 
