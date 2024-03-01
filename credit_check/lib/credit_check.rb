@@ -3,10 +3,11 @@
 # Your Luhn Algorithm Here
 
 class CreditCheck
-  attr_reader :card_number, :credit_limit
+  attr_reader :card_number, :limit
+
   def initialize(card_number, credit_limit)
     @card_number = card_number
-    @credit_limit = credit_limit
+    @limit = credit_limit
   end
   def luhn_algorithm(credit_card_number)
     element = 0
