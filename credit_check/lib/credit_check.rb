@@ -81,9 +81,9 @@ class CreditCheck
 
     validity = greater_than_9_card_number.sum
     if validity % 10 == 0
-      p "The number #{credit_card_number} is valid!"
+      p "The number #{american_express_number} is valid!"
     else
-      p "The number #{credit_card_number} is invalid!"
+      p "The number #{american_express_number} is invalid!"
     end
   end
 
