@@ -24,6 +24,12 @@ RSpec.describe CreditCheck do
   it 'checks to see if card number is valid' do
     credit_check = CreditCheck.new("5541808923795240",15000)
 
-    expect(credit_check.is_valid?).to eq(false)
+    expect(credit_check.is_valid?).to eq(true)
+  end
+
+  it 'checks to see that an American Express card number is valid' do
+    credit_check = CreditCheck.new("342804633855673", 15000)
+
+    expect(credit_check.is_valid_express?).to eq(true)
   end
 end
