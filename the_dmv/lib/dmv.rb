@@ -10,8 +10,12 @@ class Dmv
   end
 
   def facilities_offering_service(service)
-    @facilities.find do |facility|
-      facility.services.include?(service)
+    search_results = []
+    @facilities.each do |facility|
+      if facility.services.include?(service)
+        search_results << facility
+      end
     end
+    search_results
   end
 end
