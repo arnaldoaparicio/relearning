@@ -1,3 +1,5 @@
+require 'date'
+
 class Facility
   attr_reader :name, :address, :phone, :services, :registered_vehicles, :collected_fees
 
@@ -15,6 +17,7 @@ class Facility
   end
 
   def register_vehicle(vehicle)
+    vehicle.registration_date = Date.today
     @registered_vehicles << vehicle
   end
 end
