@@ -20,6 +20,7 @@ class Facility
     vehicle.registration_date = Date.today
     current_year = Date.today.year.to_i
     vehicle_age = current_year - vehicle.year
+    
     if vehicle_age >= 25
       vehicle.plate_type = :antique
       @collected_fees += 25
