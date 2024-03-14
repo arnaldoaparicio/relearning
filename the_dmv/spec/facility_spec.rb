@@ -43,9 +43,10 @@ RSpec.describe Facility do
 
       facility_1.register_vehicle(cruz)
 
-      expect(cruz.registration_date).to eq('#<Date: 2023-01-12 ((2459957j,0s,0n),+0s,2299161j)>)')
+      expect(cruz.registration_date).to eq(Date.today)
       expect(cruz.plate_type).to eq(:regular)
       expect(facility_1.registered_vehicles).to eq([cruz])
+      expect(facility_1.collected_fees).to eq(100)
     end
   end
 end
