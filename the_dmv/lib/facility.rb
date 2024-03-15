@@ -37,4 +37,13 @@ class Facility
       nil
     end
   end
+
+  def administer_written_test(registrant)
+    if !@services.empty? && @services.include?('Written Test')
+      registrant.license_data[:written] = true
+      registrant.license_data[:written]
+    else
+      registrant.license_data[:written] 
+    end
+  end
 end
