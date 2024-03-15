@@ -55,4 +55,13 @@ class Facility
       registrant.license_data[:license]
     end
   end
+
+  def renew_drivers_license(registrant)
+    if !@services.empty? && @services.include?('Renew License') && registrant.permit? == true && registrant.age >= 16 && registrant.license_data[:license] == true
+      registrant.license_data[:renewed] = true
+      registrant.license_data[:renewed]
+    else
+      registrant.license_data[:renewed]
+    end
+  end
 end
